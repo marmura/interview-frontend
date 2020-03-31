@@ -1,0 +1,33 @@
+.app-logo {
+    height: 30px;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .app-logo {
+        animation: app-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes app-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header-cart-items-count {
+    font-size: 14px;
+    margin-left: 7px;
+}
+
+.toast {
+    position: absolute;
+    z-index: 10000;
+    right: 20px;
+    top: 65px;
+    min-width: 200px;
+    width: 300px;
+}

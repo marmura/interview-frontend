@@ -1,0 +1,32 @@
+.cart-section .card {
+    border-radius: 0;
+}
+.cart-section .card-header {
+    background-color: white;
+    font-size: 13px;
+}
+.cart-section .card-footer {
+    background-color: white;
+}
+.cart-section .cart-item-actions {
+    color: #28B495;
+}
+.cart-item .form-control {
+    width: 70px;
+}
+.cart-item .cart-item-calc span {
+    line-height: 3.1;
+}
+.cart-total-price {
+    font-size: 21px;
+    font-weight: bold;
+}
+.cart-other-item {
+    border-bottom: 1px solid #E6EAEC;
+}
+.cart-section-other-products .card-body {
+    padding: 0;
+}
+.cart-section-other-products .card-body .cart-other-item {
+    padding: 1.25rem;
+}
