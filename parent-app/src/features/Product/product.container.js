@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faHeart, faMailBulk, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
@@ -8,13 +8,20 @@ import Carousel from '../../common/components/Carousel';
 import { addProductToCart } from './product.actions';
 import { PRODUCT_DUMP } from './product.constants';
 import './product.css';
+import {clearCart} from "../Cart/cart.actions";
 
-const Product = () => {
+const Product = ({ location }) => {
     const dispatch = useDispatch();
 
     const handleAddProductToCart = () => {
         dispatch(addProductToCart(PRODUCT_DUMP));
     };
+
+    useEffect(() => {
+        if(location.state && location.state.clearCart) {
+            dispatch(clearCart());
+        }
+    }, [location.state]);
 
     return (
         <div className="product-container">

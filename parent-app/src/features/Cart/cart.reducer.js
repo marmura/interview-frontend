@@ -42,6 +42,11 @@ export default function cart(state = {
                 errorMessage: action.message
             };
         }
+        case constants.CLEAR_CART: {
+            return {
+                items: []
+            };
+        }
         default:
             return state
     }

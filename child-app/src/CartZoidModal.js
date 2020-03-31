@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {Modal, Button} from "react-bootstrap";
-import MyWidget from '../../../widget';
+// import MyWidget from '../../../widget';
 
-let MyReactWidget = MyWidget.driver('react', {
-    React: React,
-    ReactDOM: ReactDOM
-});
+// let MyReactWidget = MyWidget.driver('react', {
+//     React: React,
+//     ReactDOM: ReactDOM
+// });
 
 const CartZoidModal = ({show, handleClose}) => {
     return (
@@ -16,7 +16,7 @@ const CartZoidModal = ({show, handleClose}) => {
                 <Modal.Title>Zoid Modal</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <MyReactWidget />
+                Complete checkout
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="primary" onClick={handleClose}>

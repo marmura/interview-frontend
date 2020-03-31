@@ -25,7 +25,7 @@ const Header = () => {
                         <FontAwesomeIcon icon={faShoppingCart}/>
                         <span className="header-cart-items-count">
                             (<span className="font-weight-bold">
-                                {cartItems.length}
+                                {cartItems.length ? cartItems[0].qty : 0}
                             </span>) Items
                         </span>
                     </Link>

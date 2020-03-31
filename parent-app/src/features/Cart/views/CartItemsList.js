@@ -8,11 +8,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 import * as routes from "../../../constants/router.constants";
 import {changeProductQty} from "../cart.actions";
+import CheckoutButton from '../../../common/components/CheckoutButton';
 
-const CartItemsList = ({ handleCheckoutClick }) => {
+const CartItemsList = ({ handleCheckoutClick, cartItems }) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.cart.items);
 
     const handleContinueShoppingClick = () => history.push(routes.PRODUCT_ROUTE);
 
@@ -24,7 +24,7 @@ const CartItemsList = ({ handleCheckoutClick }) => {
                 <Row>
                     <Col><span className="font-weight-bold">Items in your cart</span></Col>
                     <Col className="text-right">
-                        (<span className="font-weight-bold">{cartItems.length}</span>) items
+                        (<span className="font-weight-bold">{cartItems.length ? cartItems[0].qty : 0}</span>) items
                     </Col>
                 </Row>
             </Card.Header>
@@ -40,11 +40,8 @@ const CartItemsList = ({ handleCheckoutClick }) => {
                             <span>Continue shopping</span>
                         </Button>
                     </Col>
-                    <Col className="text-right">
-                        <Button variant="secondary" onClick={handleCheckoutClick}>
-                            <FontAwesomeIcon icon={faShoppingCart}/>
-                            <span>Checkout</span>
-                        </Button>
+                    <Col className="text-right card-checkout-btn-container">
+                        <CheckoutButton onClose={handleCheckoutClick} />
                     </Col>
                 </Row>
             </Card.Footer>
@@ -53,7 +50,8 @@ const CartItemsList = ({ handleCheckoutClick }) => {
 };
 
 CartItemsList.propTypes = {
-    handleCheckoutClick: PropTypes.func.isRequired
+    handleCheckoutClick: PropTypes.func.isRequired,
+    cartItems: PropTypes.array.isRequired
 };
 
 export default CartItemsList;

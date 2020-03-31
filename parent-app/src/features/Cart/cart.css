@@ -30,3 +30,6 @@
 .cart-section-other-products .card-body .cart-other-item {
     padding: 1.25rem;
 }
+.card-checkout-btn-container > div {
+    display: inline-block;
+}

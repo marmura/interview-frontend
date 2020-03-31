@@ -54,7 +54,7 @@ const CartItem = ({id, qty, price, handleItemQtyChange}) => {
                     <Row className="cart-item-calc justify-content-end pr-3">
                         <span className="mr-3">${price}</span>
                         <Form.Control className="mr-3"
-                                      onBlur={() => handleItemQtyChange({id, qty: currentQty})}
+                                      onBlur={() => handleItemQtyChange({id, qty: parseInt(currentQty)})}
                                       onChange={(e) => handleCurrentQtyChange(e)}
                                       type="number"
                                       value={currentQty}/>
